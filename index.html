@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="es" translate="no">
+  <head>
+    <!-- Configuración básica -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google" content="notranslate" />
+    <meta name="description" content="Invitación de boda" />
+
+    <title>Boda · Inma & Miquel</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!-- Tipografías -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- =========================================================
+         HERO / PORTADA
+         Imagen principal + nombres + fecha + acceso rápido al RSVP
+    ========================================================== -->
+    <header class="hero" id="top">
+      <div class="media">
+        <img src="fondo-finca.jpeg" alt="" />
+        <div class="overlay"></div>
+      </div>
+
+      <div class="content container">
+        <div class="hero-top">
+          <p class="hero-kicker font-body">¡Nos casamos!</p>
+
+          <h1 class="hero-names" aria-label="Nombres">
+            <span class="name font-names">Inma</span>
+            <span class="amp font-serif">&</span>
+            <span class="name font-names">Miquel</span>
+          </h1>
+        </div>
+
+        <div class="hero-bottom">
+          <div class="hero-divider" aria-hidden="true">
+            <span></span>
+            <span>✦</span>
+            <span></span>
+          </div>
+          <p class="hero-date font-body">20 JUNIO 2026</p>
+        </div>
+
+        <div class="hero-rsvp" id="heroScroll">
+          <small class="font-body">RSVP</small>
+          <div class="chev" aria-hidden="true"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========================================================
+         CUENTA ATRÁS
+    ========================================================== -->
+    <section class="section paper" id="countdown">
+      <div class="container">
+        <h2 class="title font-display" id="countdownTitle">
+          Cuenta atrás para el gran día
+        </h2>
+
+        <div class="countdown" id="countdownBox" aria-label="Cuenta atrás">
+          <div class="count-item">
+            <div class="count-num font-serif" id="cdDays">--</div>
+            <div class="count-lbl font-body">Días</div>
+          </div>
+
+          <div class="count-sep" aria-hidden="true"></div>
+
+          <div class="count-item">
+            <div class="count-num font-serif" id="cdHours">--</div>
+            <div class="count-lbl font-body">Horas</div>
+          </div>
+
+          <div class="count-sep" aria-hidden="true"></div>
+
+          <div class="count-item">
+            <div class="count-num font-serif" id="cdMins">--</div>
+            <div class="count-lbl font-body">Minutos</div>
+          </div>
+
+          <div class="count-sep" aria-hidden="true"></div>
+
+          <div class="count-item">
+            <div class="count-num font-serif" id="cdSecs">--</div>
+            <div class="count-lbl font-body">Segundos</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         UBICACIÓN
+    ========================================================== -->
+    <section class="section venue-wrap" id="venue">
+      <div class="container">
+        <h2 class="title font-display">¿Dónde celebramos?</h2>
+
+        <div class="venue-card">
+          <img
+            class="venue-img"
+            id="venueImage"
+            src="dibujo-finca.png"
+            alt="Ilustración de la finca"
+            loading="lazy"
+          />
+
+          <h3 class="venue-name font-display">Vandelvira La Finca</h3>
+
+          <div class="venue-meta">
+            <span class="meta-text" id="venueDate">20 junio 2026</span>
+            <span class="dot">·</span>
+            <span class="meta-text" id="venueTime">19:30</span>
+          </div>
+
+          <div class="line venue-line"></div>
+
+          <p class="addr font-body" id="venueAddress">
+            Cortijo Gil de Olid
+            <br />
+            23440 Puente del Obispo, Jaén
+          </p>
+
+          <div class="map-box">
+            <iframe
+              class="map"
+              id="mapFrame"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=37.9425181,-3.5452957&output=embed"
+              title="Mapa de la ubicación de la boda"
+            ></iframe>
+          </div>
+
+          <div class="venue-actions">
+            <a
+              class="maps-link"
+              id="mapsLink"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.google.com/maps/place/Vandelvira+La+Finca/@37.9425181,-3.5452957,17z/data=!3m1!4b1!4m6!3m5!1s0xd6e89b2d2d91dab:0xf8d4b6ffa64ac603!8m2!3d37.9425181!4d-3.5452957!16s%2Fg%2F11wft8k1np?entry=ttu&g_ep=EgoyMDI2MDMwNC4xIKXMDSoASAFQAw%3D%3D"
+            >
+              <img class="maps-link-icon" src="ubi.png" alt="" />
+              <span class="maps-link-text">Cómo llegar</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         TRANSPORTE
+    ========================================================== -->
+    <section class="section paper" id="transport">
+      <div class="container">
+        <h2 class="title font-display">Transporte</h2>
+        <p class="subtitle font-body">Bus de ida y vuelta</p>
+
+        <div class="transport-card">
+          <div class="transport-block">
+            <h3 class="transport-block-title">Bus de ida</h3>
+            <p class="transport-note">
+              Habrá servicio de autobús con las siguientes paradas:
+            </p>
+
+            <div class="transport-stop">
+              <div class="transport-stop-head">
+                <span class="transport-stop-name">Jódar</span>
+                <span class="transport-stop-time">XX:XX h</span>
+              </div>
+              <p class="transport-stop-address">Dirección de la parada de Jódar</p>
+              <a class="maps-link" target="_blank" rel="noopener noreferrer" href="#">
+                <img class="maps-link-icon" src="ubi.png" alt="" />
+                <span class="maps-link-text">Abrir en Maps</span>
+              </a>
+            </div>
+
+            <div class="transport-stop">
+              <div class="transport-stop-head">
+                <span class="transport-stop-name">Úbeda</span>
+                <span class="transport-stop-time">XX:XX h</span>
+              </div>
+              <p class="transport-stop-address">Dirección de la parada de Úbeda</p>
+              <a class="maps-link" target="_blank" rel="noopener noreferrer" href="#">
+                <img class="maps-link-icon" src="ubi.png" alt="" />
+                <span class="maps-link-text">Abrir en Maps</span>
+              </a>
+            </div>
+
+            <div class="transport-stop transport-stop-last">
+              <div class="transport-stop-head">
+                <span class="transport-stop-name">Baeza</span>
+                <span class="transport-stop-time">XX:XX h</span>
+              </div>
+              <p class="transport-stop-address">Dirección de la parada de Baeza</p>
+              <a class="maps-link" target="_blank" rel="noopener noreferrer" href="#">
+                <img class="maps-link-icon" src="ubi.png" alt="" />
+                <span class="maps-link-text">Abrir en Maps</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="line transport-line"></div>
+
+          <div class="transport-block">
+            <h3 class="transport-block-title">Bus de vuelta</h3>
+            <p class="transport-note">
+              Ambos turnos de regreso saldrán desde la finca.
+            </p>
+
+            <div class="transport-return-list">
+              <div class="transport-return-item">
+                <span class="transport-return-label">Primer turno</span>
+                <span class="transport-return-time">XX:XX h</span>
+              </div>
+
+              <div class="transport-return-item">
+                <span class="transport-return-label">Segundo turno</span>
+                <span class="transport-return-time">XX:XX h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PREGUNTAS FRECUENTES
+    ========================================================== -->
+    <section class="section paper" id="faq">
+      <div class="container">
+        <h2 class="title font-display">Preguntas frecuentes</h2>
+        <p class="subtitle font-body">Información útil para el gran día</p>
+
+        <div class="faq-card">
+          <div class="faq-list">
+            <details>
+              <summary>¿Hay parking?</summary>
+              <p>
+                Sí, habrá zona de aparcamiento en la finca (avisadme si tengo que
+                cambiar la respuesta).
+              </p>
+            </details>
+
+            <details>
+              <summary>¿Código de vestimenta?</summary>
+              <p>Lo que me digáis ponemos aquí.</p>
+            </details>
+
+            <details>
+              <summary>¿Puedo llevar acompañante?</summary>
+              <p>Lo que me digáis ponemos aquí.</p>
+            </details>
+
+            <details>
+              <summary>¿Alergias o intolerancias?</summary>
+              <p>
+                Indícalo en el RSVP (sin gluten, lactosa, vegetariano, etc.).
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PREBODA
+    ========================================================== -->
+    <section class="section prewedding-wrap" id="prewedding">
+      <div class="container">
+        <p class="subtitle font-body prewedding-subtitle">Preboda</p>
+        <h2 class="title font-display prewedding-title">Ven a saludar…</h2>
+
+        <p class="subtitle font-body prewedding-text">
+          TEXTO QUE QUERÁIS PONER AQUÍ. DUDA: ¿PONGO SOLO LA UBICACIÓN (CON
+          REDIRECCIÓN A MAPS), O TAMBIÉN QUERÉIS QUE SALGA EL MAPA COMO DE LA
+          FINCA?
+        </p>
+
+        <div class="pre-grid">
+          <article class="pre-item">
+            <img src="assets/pre-1.png" alt="" class="pre-icon" />
+            <h3 class="font-display">Preboda</h3>
+            <p class="meta font-body">Viernes 19 junio 2026</p>
+            <p class="meta font-body">20:30</p>
+            <p class="place font-body">Lugar por confirmar</p>
+
+            <div class="pre-actions">
+              <a class="btn" href="#" target="_blank" rel="noopener noreferrer">
+                Mapa
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+<!-- =========================================================
+     RSVP / FORMULARIO DE CONFIRMACIÓN
+========================================================== -->
+<section class="section rsvp-wrap" id="rsvp">
+  <div class="container">
+    <h2 class="title font-display rsvp-title">RSVP</h2>
+    <p class="subtitle font-body">
+      Confirma tu asistencia <br />
+      antes de día X de mayo
+    </p>
+
+    <div class="card inner rsvp-card">
+      <form id="rsvpForm">
+        <!-- 1) ¿Asistirás a la boda? -->
+        <div class="form-block">
+          <label class="section-label">¿Asistirás a la boda? *</label>
+
+          <div class="radios">
+            <label class="radio">
+              <input type="radio" name="attend" value="Sí, asistiré" checked />
+              <span class="dot-radio" aria-hidden="true"></span>
+              <span>Sí, asistiré</span>
+            </label>
+
+            <label class="radio">
+              <input type="radio" name="attend" value="No podré asistir" />
+              <span class="dot-radio" aria-hidden="true"></span>
+              <span>No podré asistir</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 2) Número de invitados -->
+        <div class="form-block form-group" id="guestsGroup">
+          <label class="section-label">Nº de invitados (incluyéndote)</label>
+
+          <div class="guest-stepper" aria-label="Selector de invitados">
+            <button
+              type="button"
+              class="stepper-btn"
+              id="guestMinus"
+              aria-label="Restar invitado"
+            >
+              −
+            </button>
+
+            <span class="stepper-value" id="guestCount">1</span>
+
+            <button
+              type="button"
+              class="stepper-btn"
+              id="guestPlus"
+              aria-label="Sumar invitado"
+            >
+              +
+            </button>
+          </div>
+
+          <input type="hidden" name="guests" id="guestsInput" value="1" />
+        </div>
+
+        <!-- 3) Datos de los invitados -->
+        <div id="guestCards" class="guest-cards"></div>
+
+        
+        <!-- 5) Autobús -->
+        <div class="form-block" id="busFields">
+          <label class="section-label" id="busLabel" for="busSelect">¿Necesitas autobús?</label>
+
+          <select name="bus" id="busSelect">
+            <option value="No" selected>No</option>
+            <option value="Sí">Sí</option>
+          </select>
+
+          <div class="bus-stop-group" id="busStopGroup" hidden>
+            <label class="section-label bus-stop-label" id="busStopLabel">¿En qué parada cogerás el bus?</label>
+
+            <div class="radios">
+              <label class="radio">
+                <input type="radio" name="busStop" value="Jódar" />
+                <span class="dot-radio" aria-hidden="true"></span>
+                <span>Jódar</span>
+              </label>
+
+              <label class="radio">
+                <input type="radio" name="busStop" value="Úbeda" />
+                <span class="dot-radio" aria-hidden="true"></span>
+                <span>Úbeda</span>
+              </label>
+
+              <label class="radio">
+                <input type="radio" name="busStop" value="Baeza" />
+                <span class="dot-radio" aria-hidden="true"></span>
+                <span>Baeza</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4) Preboda -->
+  <div class="form-block" id="preweddingFields">
+  <label class="section-label" id="preweddingLabel">¿Asistirás también a la preboda?</label>
+
+  <div class="radios">
+  <label class="radio">
+    <input type="radio" name="attend" value="Sí, asistiré" checked />
+    <span class="dot-radio" aria-hidden="true"></span>
+    <span id="attendYesText">Sí, asistiré</span>
+  </label>
+
+  <label class="radio">
+    <input type="radio" name="attend" value="No podré asistir" />
+    <span class="dot-radio" aria-hidden="true"></span>
+    <span id="attendNoText">No, no podré asistir</span>
+  </label>
+</div>
+</div>
+
+
+        <!-- 6) Canción -->
+        <div class="form-block" id="songField">
+          <label class="section-label" for="songInput">¿Qué canción no puede faltar en la fiesta?</label>
+          <input id="songInput" name="song" placeholder="Ej. Freed from Desire…" />
+        </div>
+
+        <!-- 7) Mensaje -->
+        <div class="form-block">
+          <label class="section-label" for="messageInput">Un mensaje para los novios</label>
+          <textarea id="messageInput" name="message" placeholder="Escribe aquí…"></textarea>
+        </div>
+
+        <button class="btn primary btn-block rsvp-submit" type="submit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send">
+            <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path>
+            <path d="m21.854 2.147-10.94 10.939"></path>
+          </svg>
+          <span>Enviar RSVP</span>
+        </button>
+
+        <div class="result" id="result"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Botón flotante para volver arriba -->
+<button class="fab" id="fab" aria-label="Subir arriba">↑</button>
+
+<!-- =========================================================
+     CIERRE / FIRMA FINAL
+========================================================== -->
+<section class="closing-signature">
+  <div class="closing-signature-line"></div>
+  <img src="logo-fecha.png" alt="Inma y Miquel" class="closing-signature-logo" />
+</section>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
