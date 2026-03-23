@@ -1,68 +1,31 @@
-/* =========================================================
-   1. VARIABLES GLOBALES
-   Base visual centralizada.
-   Cambiar colores, radios, sombras o ancho general.
-========================================================= */
 :root {
-  /* ===== COLORES PRINCIPALES =====
-     --ivory: fondo claro general de la web
-     --cream: variante clara auxiliar
-     --white: blanco puro para tarjetas y bloques
-  */
   --ivory: #f9f7f2;
   --cream: #f6f1e8;
   --white: #ffffff;
 
-  /* ===== VERDES / TEXTOS =====
-     --sage: verde suave decorativo
-     --sage-dark: verde oscuro principal para textos elegantes
-  */
-  --sage: #c9d2c6;
   --sage-dark: #2e4a3f;
 
-  /* ===== DORADOS =====
-     Color principal de secciones como ubicación, FAQ o RSVP
-  */
   --gold: #c5a46d;
   --gold-30: rgba(197, 164, 109, 0.3);
-  --gold-40: rgba(197, 164, 109, 0.4);
 
-  /* ===== MARRONES =====
-     Se usan sobre todo en títulos y detalles de tarjetas claras
-  */
   --brown: #835d2f;
   --brown-80: rgba(131, 93, 47, 0.8);
   --brown-70: rgba(131, 93, 47, 0.7);
-  --brown-60: rgba(131, 93, 47, 0.6);
   --brown-22: rgba(131, 93, 47, 0.22);
 
-  /* ===== TEXTOS GENERALES ===== */
   --ink: rgba(16, 16, 16, 0.92);
   --muted: rgba(46, 74, 63, 0.7);
 
-  /* ===== SOMBRAS =====
-     --shadow-lg: sombra para tarjetas importantes
-     --shadow-md: sombra más suave para elementos secundarios
-  */
   --shadow-lg: 0 18px 40px rgba(0, 0, 0, 0.14);
   --shadow-md: 0 10px 26px rgba(0, 0, 0, 0.12);
 
-  /* ===== RADIOS =====
-     Controlan lo redondeado de las tarjetas y bloques
-  */
   --r-xl: 22px;
   --r-lg: 18px;
   --r-md: 14px;
 
-  /* ===== MAQUETACIÓN =====
-     Ancho máximo del contenido centrado
-  */
   --container: 980px;
 }
 
-/* =========================================================
-   2. RESET / BASE
-========================================================= */
 * {
   box-sizing: border-box;
 }
@@ -80,16 +43,11 @@ body {
   margin: 0;
   background: var(--ivory);
   color: var(--ink);
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: "Cormorant Garamond", serif;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
 }
 
-/* =========================================================
-   3. TIPOGRAFÍAS UTILITARIAS
-   Estas clases solo asignan fuente.
-   Luego cada bloque define su tamaño, color, espaciado, etc.
-========================================================= */
 .font-display {
   font-family: "Great Vibes", cursive;
 }
@@ -99,7 +57,7 @@ body {
 }
 
 .font-body {
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: "Cormorant Garamond", serif;
 }
 
 .font-names {
@@ -108,9 +66,6 @@ body {
   letter-spacing: 0.01em;
 }
 
-/* =========================================================
-   4. CLASES BASE DE MAQUETACIÓN
-========================================================= */
 .container {
   width: min(var(--container), 100%);
   margin: 0 auto;
@@ -129,14 +84,12 @@ body {
   }
 }
 
-/* Fondo tipo papel / textura */
 .paper {
   background-image: url("fondo-invitacio.PNG");
   background-size: cover;
   background-position: center;
 }
 
-/* Línea decorativa fina */
 .line {
   width: 40px;
   height: 1px;
@@ -144,36 +97,25 @@ body {
   background: rgba(46, 74, 63, 0.2);
 }
 
-/* =========================================================
-   5. TÍTULOS GENERALES DE SECCIÓN
-   .title: título principal de cada bloque
-   .subtitle: subtítulo pequeño en mayúsculas
-========================================================= */
 .title {
   margin: 0 0 10px;
   text-align: center;
   color: var(--sage-dark);
-  font-size: clamp(34px, 6vw, 58px);
+  font-size: clamp(38px, 6vw, 64px);
   font-weight: 400;
-  line-height: 0.95;
+  line-height: 1.06;
 }
 
 .subtitle {
   margin: 0 0 8px;
   text-align: center;
   color: rgba(46, 74, 63, 0.6);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
-/* =========================================================
-   6. BOTONES
-   .btn: botón base
-   .btn.primary: botón principal dorado
-   .btn-block: botón ancho completo
-========================================================= */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -215,12 +157,8 @@ body {
   width: 100%;
 }
 
-/* =========================================================
-   7. TARJETAS BASE
-   Se usa en RSVP y puede reutilizarse en otros módulos
-========================================================= */
 .card {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(197, 164, 109, 0.2);
   border-radius: var(--r-xl);
   box-shadow: var(--shadow-lg);
@@ -236,10 +174,7 @@ body {
   }
 }
 
-/* =========================================================
-   8. HERO / PORTADA
-   Fondo con imagen + overlay oscuro + nombres + fecha
-========================================================= */
+/* HERO */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -267,7 +202,8 @@ body {
 .hero .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.32);
+ /* background: rgba(0, 0, 0, 0.32); */
+ background: rgba(0, 0, 0, 0.09);
 }
 
 .hero .content {
@@ -294,9 +230,9 @@ body {
 
 .hero-kicker {
   margin-bottom: 28px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
   opacity: 0.95;
   text-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
@@ -314,13 +250,11 @@ body {
 .hero-names .name {
   font-size: clamp(64px, 16vw, 170px);
   font-weight: 400;
-  letter-spacing: 0;
   line-height: 0.92;
 }
 
 .hero-names .amp {
   margin: -10px 0 -4px;
-  font-family: "Great Vibes", cursive;
   font-size: clamp(36px, 7vw, 72px);
   opacity: 0.95;
 }
@@ -330,6 +264,7 @@ body {
   text-align: center;
   color: var(--white);
 }
+
 
 .hero-divider {
   display: flex;
@@ -356,56 +291,12 @@ body {
 
 .hero-date {
   font-size: clamp(18px, 3.6vw, 34px);
-  font-weight: 300;
-  letter-spacing: 0.18em;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
 }
 
-.hero-rsvp {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding-bottom: 18px;
-  color: var(--white);
-  cursor: pointer;
-  user-select: none;
-}
-
-.hero-rsvp small {
-  font-size: 11px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  opacity: 0.95;
-  text-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-}
-
-.chev {
-  width: 22px;
-  height: 22px;
-  border: 2px solid rgba(255, 255, 255, 0.85);
-  border-top: 0;
-  border-left: 0;
-  transform: rotate(45deg);
-  animation: floaty 1.2s ease-in-out infinite;
-  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35));
-}
-
-@keyframes floaty {
-  0%,
-  100% {
-    transform: translateY(0) rotate(45deg);
-  }
-
-  50% {
-    transform: translateY(6px) rotate(45deg);
-  }
-}
-
-/* =========================================================
-   9. COUNTDOWN / CUENTA ATRÁS
-   Fondo claro con los números grandes y separadores verticales
-========================================================= */
+/* COUNTDOWN */
 #countdown {
   display: flex;
   align-items: center;
@@ -442,11 +333,10 @@ body {
 }
 
 .count-num {
-  font-family: "Great Vibes", cursive;
   font-size: clamp(48px, 8vw, 86px);
   line-height: 0.95;
   color: var(--sage-dark);
-  font-style: italic;
+  font-style: normal;
 }
 
 .count-lbl {
@@ -454,7 +344,7 @@ body {
   color: rgba(197, 164, 109, 0.88);
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.38em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
 }
 
@@ -487,7 +377,7 @@ body {
 
   .count-lbl {
     font-size: 10px;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.24em;
   }
 
   .count-sep {
@@ -495,10 +385,7 @@ body {
   }
 }
 
-/* =========================================================
-   10. UBICACIÓN / VENUE
-   Fondo dorado y tarjeta blanca con imagen, datos y mapa
-========================================================= */
+/* DETALLES DEL DÍA */
 .venue-wrap {
   background: var(--gold);
   color: var(--ivory);
@@ -510,70 +397,122 @@ body {
 }
 
 .venue-wrap .subtitle {
-  color: rgba(249, 247, 242, 0.88);
+  color: rgba(249, 247, 242, 0.9);
 }
 
-.venue-card {
-  overflow: hidden;
-  padding: 22px;
-  text-align: center;
-  color: var(--brown);
-  background: var(--white);
-  border: 1px solid rgba(197, 164, 109, 0.2);
+.details-grid {
+  display: grid;
+  gap: 22px;
+  margin-top: 28px;
+}
+
+@media (min-width: 900px) {
+  .details-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.details-card {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(197, 164, 109, 0.22);
   border-radius: var(--r-xl);
   box-shadow: var(--shadow-lg);
+  color: var(--brown);
+  text-align: center;
 }
 
 @media (min-width: 768px) {
-  .venue-card {
-    padding: 34px;
+  .details-card {
+    padding: 32px;
   }
+}
+
+.details-kicker {
+  margin: 0 0 16px;
+  color: rgba(131, 93, 47, 0.72);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.details-title {
+  margin: 0 0 10px;
+  color: var(--brown);
+  font-size: clamp(32px, 5vw, 46px);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.details-mini {
+  margin: 0 0 18px;
+  color: rgba(131, 93, 47, 0.72);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.venue-img-frame {
+  position: relative;
+  width: 100%;
+  margin: 0 auto 22px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: transparent;
 }
 
 .venue-img {
   display: block;
   width: 100%;
-  max-width: 520px;
-  height: auto;
-  margin: 0 auto 10px;
-  opacity: 0.95;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 6px;
+
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 9%, black 88%, transparent 100%);
+  -webkit-mask-composite: source-in;
+
+  mask-image:
+    linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 9%, black 88%, transparent 100%);
+  mask-composite: intersect;
 }
 
 .venue-name {
   margin: 12px 0 14px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid rgba(197, 164, 109, 0.2);
   color: var(--brown);
-  font-size: clamp(32px, 6vw, 48px);
+  font-size: clamp(34px, 6vw, 50px);
   font-weight: 400;
-  line-height: 1;
-}
-
-.venue-meta .dot,
-.venue-meta .meta-text {
-  color: var(--brown);
-}
-
-.venue-meta .meta-text {
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
   line-height: 1;
 }
 
 .venue-line {
-  margin: 16px auto;
+  margin: 14px auto;
+}
+
+.venue-meta .meta-text {
+  color: var(--brown);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1;
 }
 
 .addr {
-  margin-top: 14px;
+  margin-top: 6px;
   color: var(--brown);
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .map-box {
   overflow: hidden;
+  width: 100%;
   height: 240px;
   margin-top: 18px;
   border-radius: var(--r-lg);
@@ -593,7 +532,6 @@ body {
   margin-top: 18px;
 }
 
-/* Enlace tipo "abrir en Google Maps" */
 .maps-link {
   display: inline-flex;
   align-items: center;
@@ -628,92 +566,141 @@ body {
   display: inline-block;
 }
 
-/* =========================================================
-   11. TRANSPORTE
-   Tarjeta clara con paradas de ida y horarios de vuelta
-========================================================= */
-#transport {
-  background: #f9f6f1;
-}
-
-.transport-card {
-  padding: 22px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(197, 164, 109, 0.2);
-  border-radius: var(--r-xl);
+.timeline-img {
+  display: block;
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 18px;
   box-shadow: var(--shadow-md);
-  backdrop-filter: blur(10px);
 }
-
-@media (min-width: 768px) {
-  .transport-card {
-    padding: 34px;
-  }
-}
-
-.transport-block-title {
-  margin: 0 0 10px;
-  color: var(--brown);
+.transport-card-soft {
   text-align: center;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 1.1;
 }
 
 .transport-note {
-  margin: 0 0 18px;
-  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 22px;
   color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.transport-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 8px;
+}
+
+.transport-block {
+  padding: 20px 18px;
+  background: rgba(251, 248, 243, 0.72);
+  border: 1px solid rgba(197, 164, 109, 0.14);
+  border-radius: 14px;
+  text-align: center;
+}
+
+.transport-block-head {
+  margin-bottom: 16px;
+}
+
+.transport-block-kicker {
+  display: block;
+  color: var(--brown);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.transport-mini-line {
+  width: 46px;
+  height: 1px;
+  margin: 10px auto 0;
+  background: rgba(197, 164, 109, 0.32);
+}
+
+.transport-label {
+  margin: 0 0 10px;
+  color: rgba(131, 93, 47, 0.68);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.transport-stops {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.transport-stop-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 86px;
+  padding: 9px 14px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(197, 164, 109, 0.16);
+  border-radius: 999px;
+  color: var(--brown);
+  font-size: 15px;
+  line-height: 1;
+}
+
+.transport-time-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.transport-time-label {
+  color: rgba(131, 93, 47, 0.68);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.transport-time-value {
+  color: var(--brown);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.transport-small {
+  max-width: 440px;
+  margin: 0 auto;
+  color: rgba(131, 93, 47, 0.72);
   font-size: 14px;
   line-height: 1.55;
+  text-align: center;
 }
 
-.transport-stop {
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(197, 164, 109, 0.18);
-}
-
-.transport-stop-last {
-  padding-bottom: 0;
-  border-bottom: 0;
-}
-
-.transport-stop-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 6px;
-}
-
-.transport-stop-name {
-  color: var(--brown);
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.transport-stop-time {
-  color: var(--brown-80);
-  font-size: 14px;
-  white-space: nowrap;
-}
-
-.transport-stop-address {
-  margin: 0 0 10px;
+.transport-note-soft {
+  margin: 0 auto 16px;
+  max-width: 500px;
   color: var(--muted);
   font-size: 14px;
-  line-height: 1.5;
-}
-
-.transport-line {
-  margin: 22px auto;
+  line-height: 1.65;
+  text-align: center;
 }
 
 .transport-return-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin-top: 14px;
 }
 
 .transport-return-item {
@@ -722,7 +709,7 @@ body {
   justify-content: space-between;
   gap: 12px;
   padding: 14px 16px;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.82);
   border: 1px solid rgba(197, 164, 109, 0.18);
   border-radius: var(--r-md);
 }
@@ -735,83 +722,43 @@ body {
 .transport-return-time {
   color: var(--brown);
   font-family: "Cormorant Garamond", serif;
-  font-size: 18px;
+  font-size: 19px;
 }
 
-/* =========================================================
-   12. FAQ
-   Fondo dorado con tarjeta blanca de desplegables
-========================================================= */
-#faq {
-  background: var(--gold);
-  color: var(--ivory);
-}
-
-#faq .title,
-#faq .subtitle {
-  color: var(--ivory);
-}
-
-#faq .subtitle {
-  color: rgba(249, 247, 242, 0.88);
-}
-
-.faq-card {
-  padding: 22px;
-  background: var(--white);
-  border: 1px solid rgba(197, 164, 109, 0.2);
-  border-radius: var(--r-xl);
-  box-shadow: var(--shadow-lg);
-}
-
-@media (min-width: 768px) {
-  .faq-card {
-    padding: 34px;
+@media (min-width: 900px) {
+  .transport-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    align-items: start;
   }
 }
 
-.faq-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-details {
-  padding: 12px 14px;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(197, 164, 109, 0.2);
-  border-radius: var(--r-md);
-}
-
-summary {
-  cursor: pointer;
-  color: var(--sage-dark);
-  font-weight: 600;
-  list-style: none;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-details p {
-  margin: 10px 0 0;
+.parking-text {
+  max-width: 620px;
+  margin: 0 auto;
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.55;
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: center;
 }
 
-/* =========================================================
-   13. PREBODA
-   Fondo claro con tarjeta para evento previo
-========================================================= */
+/* PREBODA */
 .prewedding-wrap {
-  background: #f9f6f1;
+  background: var(--cream);
+  color: var(--brown);
+}
+
+.prewedding-wrap .title {
+  color: var(--brown);
+}
+
+.prewedding-wrap .subtitle {
+  color: rgba(131, 93, 47, 0.72);
 }
 
 .prewedding-subtitle {
   margin-bottom: 10px;
-  color: rgba(131, 93, 47, 0.72);
 }
 
 .prewedding-title {
@@ -819,111 +766,152 @@ details p {
 }
 
 .prewedding-text {
-  max-width: 720px;
-  margin: 0 auto 26px;
+  max-width: 760px;
+  margin: 0 auto 28px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.7;
   letter-spacing: normal;
   text-transform: none;
 }
 
-.pre-grid {
+.pre-card {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(197, 164, 109, 0.2);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-lg);
+  color: var(--brown);
+}
+
+@media (min-width: 768px) {
+  .pre-card {
+    padding: 34px;
+  }
+}
+
+.pre-card-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.pre-icon {
+  width: 74px;
+  height: auto;
+  opacity: 0.92;
+}
+
+.pre-kicker {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: rgba(131, 93, 47, 0.72);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pre-name {
+  margin: 0 0 10px;
+  color: var(--brown);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.pre-description {
+  max-width: 560px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.pre-details {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 14px;
-  max-width: 720px;
-  margin: 0 auto;
+  gap: 12px;
+  margin: 0 0 20px;
 }
 
 @media (min-width: 760px) {
-  .pre-grid {
+  .pre-details {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-.pre-item {
-  padding: 20px;
-  text-align: center;
-  color: var(--sage-dark);
-  background: var(--white);
+.pre-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  background: #fbf8f3;
   border: 1px solid rgba(197, 164, 109, 0.2);
-  border-radius: var(--r-xl);
-  box-shadow: var(--shadow-md);
+  border-radius: var(--r-md);
 }
 
-.pre-item h3 {
-  margin: 8px 0 10px;
-  color: rgba(130, 95, 48, 0.92);
-  font-size: 34px;
-  font-weight: 400;
+.pre-detail-label {
+  color: rgba(131, 93, 47, 0.66);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.pre-item .meta {
-  margin: 0;
-  color: rgba(130, 95, 48, 0.75);
-  font-size: 13px;
-  letter-spacing: 0.06em;
+.pre-detail-value {
+  color: var(--brown);
+  font-size: 16px;
+  line-height: 1.45;
 }
 
-.pre-item .place {
-  margin-top: 6px;
-  color: rgba(130, 95, 48, 0.6);
-  font-size: 13px;
-  font-style: italic;
-}
-
-.pre-icon {
-  width: 72px;
-  height: auto;
-  opacity: 0.9;
+.pre-note {
+  margin: 0 0 18px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 .pre-actions {
-  margin-top: 12px;
+  display: flex;
+  justify-content: center;
 }
 
-/* =========================================================
-   14. RSVP / FORMULARIO
-   Fondo dorado + tarjeta blanca + formulario integrado
-   Estilo limpio y uniforme con Lora
-========================================================= */
+/* RSVP */
 .rsvp-wrap {
   background: var(--gold);
 }
 
 .rsvp-wrap .title {
-  color: var(--white);
+  color: var(--ivory);
 }
 
 .rsvp-wrap .subtitle {
   color: rgba(249, 247, 242, 0.88);
 }
 
-/* Tarjeta principal del formulario */
 .rsvp-card {
   max-width: 720px;
   margin: 0 auto;
 }
 
-/* Layout general */
 .rsvp-card form {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-/* Bloques del formulario */
 .form-block {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-/* =========================================================
-   TIPOGRAFÍA GENERAL
-========================================================= */
 .rsvp-card,
 .rsvp-card label,
 .rsvp-card input,
@@ -940,7 +928,6 @@ details p {
   font-family: "Lora", serif;
 }
 
-/* Preguntas principales del formulario */
 .rsvp-card .section-label,
 .rsvp-card .guest-card-title,
 .rsvp-card .bus-stop-label {
@@ -953,7 +940,6 @@ details p {
   letter-spacing: 0;
 }
 
-/* Texto secundario bajo el contacto principal */
 .rsvp-card .guest-card-subtitle {
   margin: 3px 0 0;
   color: rgba(131, 93, 47, 0.72);
@@ -962,7 +948,6 @@ details p {
   line-height: 1.45;
 }
 
-/* Labels internos de campos */
 .rsvp-card .guest-fields label,
 .rsvp-card .guest-card label,
 .rsvp-card .form-block > label,
@@ -976,24 +961,25 @@ details p {
   line-height: 1.35;
 }
 
-/* Inputs, textarea y selects */
 .rsvp-card input,
 .rsvp-card textarea,
 .rsvp-card select {
   width: 100%;
   box-sizing: border-box;
   padding: 12px 14px;
-  background: var(--ivory);
-  border: 1px solid rgba(197, 164, 109, 0.26);
+  background: rgba(255, 255, 255, 0.56);
+  border: 1px solid rgba(197, 164, 109, 0.22);
   border-radius: 14px;
   outline: none;
   color: rgba(110, 74, 34, 0.96);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.25;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
-/* Placeholder */
 .rsvp-card input::placeholder,
 .rsvp-card textarea::placeholder {
   color: rgba(131, 93, 47, 0.42);
@@ -1001,7 +987,6 @@ details p {
   font-weight: 400;
 }
 
-/* Focus */
 .rsvp-card input:focus,
 .rsvp-card textarea:focus,
 .rsvp-card select:focus {
@@ -1009,13 +994,15 @@ details p {
   box-shadow: 0 0 0 3px rgba(197, 164, 109, 0.08);
 }
 
-/* Textarea */
+.rsvp-card select::-ms-expand {
+  display: none;
+}
+
 .rsvp-card textarea {
   min-height: 108px;
   resize: vertical;
 }
 
-/* Campos desactivados */
 .rsvp-card input:disabled,
 .rsvp-card textarea:disabled,
 .rsvp-card select:disabled {
@@ -1026,9 +1013,6 @@ details p {
   cursor: not-allowed;
 }
 
-/* =========================================================
-   RADIOS
-========================================================= */
 .radios {
   display: flex;
   flex-direction: column;
@@ -1079,9 +1063,6 @@ details p {
   transform: scale(1);
 }
 
-/* =========================================================
-   SELECTOR DE INVITADOS (+ / -)
-========================================================= */
 .guest-stepper {
   display: inline-flex;
   align-items: center;
@@ -1122,10 +1103,6 @@ details p {
   font-weight: 500;
 }
 
-/* =========================================================
-   TARJETAS DE INVITADOS
-   Fondo sutil para diferenciarlas sin recargar
-========================================================= */
 .guest-cards {
   display: flex;
   flex-direction: column;
@@ -1149,16 +1126,6 @@ details p {
   gap: 13px;
 }
 
-/* Inputs dentro de tarjetas:
-   un pelín más blancos para que se distingan del fondo de la card */
-.guest-card input {
-  background: rgba(255, 255, 255, 0.56);
-  border: 1px solid rgba(197, 164, 109, 0.22);
-}
-
-/* =========================================================
-   BLOQUE DE PARADA DE BUS
-========================================================= */
 .bus-stop-group {
   margin-top: 8px;
 }
@@ -1171,9 +1138,6 @@ details p {
   display: none !important;
 }
 
-/* =========================================================
-   MENSAJE RESULTADO ENVÍO
-========================================================= */
 .result {
   display: none;
   margin-top: 8px;
@@ -1195,20 +1159,15 @@ details p {
   color: #a64646;
 }
 
-/* Botones desactivados */
 button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-/* Clase usada por JS para ocultar bloques */
 .is-hidden {
   display: none !important;
 }
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
 @media (max-width: 699px) {
   .rsvp-card form {
     gap: 16px;
@@ -1233,10 +1192,17 @@ button:disabled {
   }
 
   .rsvp-card input,
-  .rsvp-card textarea,
-  .rsvp-card select {
+  .rsvp-card textarea {
     padding: 12px 13px;
     font-size: 14px;
+  }
+
+  .rsvp-card select {
+    padding-right: 42px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23835d2f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m6 9 6 6 6-6'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 18px;
   }
 
   .rsvp-card input::placeholder,
@@ -1245,8 +1211,10 @@ button:disabled {
   }
 
   .guest-card {
-    padding: 15px;
-    border-radius: 17px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.34);
+    border: 1px solid rgba(197, 164, 109, 0.16);
+    border-radius: 18px;
   }
 
   .stepper-btn {
@@ -1264,10 +1232,6 @@ button:disabled {
   }
 }
 
-/* =========================================================
-   14.X BOTÓN RSVP
-   Ajuste específico para no heredar el estilo genérico de .btn
-========================================================= */
 .rsvp-card .btn.rsvp-submit {
   font-family: "Lora", serif;
   font-size: 14px;
@@ -1275,7 +1239,6 @@ button:disabled {
   line-height: 1;
   letter-spacing: 0;
   text-transform: none;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1289,10 +1252,7 @@ button:disabled {
   display: block;
 }
 
-
-/* =========================================================
-   15. BOTÓN FLOTANTE PARA VOLVER ARRIBA
-========================================================= */
+/* FAB */
 .fab {
   position: fixed;
   right: 18px;
@@ -1324,10 +1284,7 @@ button:disabled {
   transform: translateY(-2px);
 }
 
-/* =========================================================
-   16. CIERRE / FIRMA FINAL
-   Línea decorativa + logo o sello final
-========================================================= */
+/* CIERRE */
 .closing-signature {
   display: flex;
   flex-direction: column;

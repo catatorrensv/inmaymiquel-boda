@@ -13,12 +13,16 @@
     <link rel="icon" type="image/png" href="favicon.png" />
 
     <!-- Tipografías -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
-    <!-- Estilos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap"
+  rel="stylesheet"
+/>    <!-- Estilos -->
     <link rel="stylesheet" href="styles.css" />
   </head>
+
+
 
   <body>
     <!-- =========================================================
@@ -27,7 +31,7 @@
     ========================================================== -->
     <header class="hero" id="top">
       <div class="media">
-        <img src="fondo-finca.jpeg" alt="" />
+        <img src="fondo-acuarela.jpg" alt="" />
         <div class="overlay"></div>
       </div>
 
@@ -51,10 +55,7 @@
           <p class="hero-date font-body">20 JUNIO 2026</p>
         </div>
 
-        <div class="hero-rsvp" id="heroScroll">
-          <small class="font-body">RSVP</small>
-          <div class="chev" aria-hidden="true"></div>
-        </div>
+      
       </div>
     </header>
 
@@ -97,211 +98,227 @@
       </div>
     </section>
 
-    <!-- =========================================================
-         UBICACIÓN
-    ========================================================== -->
-    <section class="section venue-wrap" id="venue">
-      <div class="container">
-        <h2 class="title font-display">¿Dónde celebramos?</h2>
+  
 
-        <div class="venue-card">
+    <!-- =========================================================
+     DETALLES DEL DÍA
+========================================================== -->
+<section class="section venue-wrap" id="venue">
+  <div class="container">
+    <h2 class="title font-display">Detalles del día</h2>
+    <p class="subtitle font-body">Todo lo que necesitas saber</p>
+
+    <div class="details-grid">
+      <!-- CARD 1 · UBICACIÓN -->
+      <article class="details-card">
+        <p class="details-kicker font-body">¿Dónde se celebrará?</p>
+
+        <div class="venue-img-frame">
           <img
             class="venue-img"
             id="venueImage"
-            src="dibujo-finca.png"
-            alt="Ilustración de la finca"
+            src="finca-acuarela.jpg"
+            alt="Acuarela de la entrada de Vandelvira La Finca"
             loading="lazy"
           />
-
-          <h3 class="venue-name font-display">Vandelvira La Finca</h3>
-
-          <div class="venue-meta">
-            <span class="meta-text" id="venueDate">20 junio 2026</span>
-            <span class="dot">·</span>
-            <span class="meta-text" id="venueTime">19:30</span>
-          </div>
-
-          <div class="line venue-line"></div>
-
-          <p class="addr font-body" id="venueAddress">
-            Cortijo Gil de Olid
-            <br />
-            23440 Puente del Obispo, Jaén
-          </p>
-
-          <div class="map-box">
-            <iframe
-              class="map"
-              id="mapFrame"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=37.9425181,-3.5452957&output=embed"
-              title="Mapa de la ubicación de la boda"
-            ></iframe>
-          </div>
-
-          <div class="venue-actions">
-            <a
-              class="maps-link"
-              id="mapsLink"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.google.com/maps/place/Vandelvira+La+Finca/@37.9425181,-3.5452957,17z/data=!3m1!4b1!4m6!3m5!1s0xd6e89b2d2d91dab:0xf8d4b6ffa64ac603!8m2!3d37.9425181!4d-3.5452957!16s%2Fg%2F11wft8k1np?entry=ttu&g_ep=EgoyMDI2MDMwNC4xIKXMDSoASAFQAw%3D%3D"
-            >
-              <img class="maps-link-icon" src="ubi.png" alt="" />
-              <span class="maps-link-text">Cómo llegar</span>
-            </a>
-          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- =========================================================
-         TRANSPORTE
-    ========================================================== -->
-    <section class="section paper" id="transport">
-      <div class="container">
-        <h2 class="title font-display">Transporte</h2>
-        <p class="subtitle font-body">Bus de ida y vuelta</p>
+        <h3 class="venue-name font-display">Vandelvira La Finca</h3>
 
-        <div class="transport-card">
-          <div class="transport-block">
-            <h3 class="transport-block-title">Bus de ida</h3>
-            <p class="transport-note">
-              Habrá servicio de autobús con las siguientes paradas:
-            </p>
+        <div class="line venue-line"></div>
 
-            <div class="transport-stop">
-              <div class="transport-stop-head">
-                <span class="transport-stop-name">Jódar</span>
-                <span class="transport-stop-time">XX:XX h</span>
-              </div>
-              <p class="transport-stop-address">Dirección de la parada de Jódar</p>
-              <a class="maps-link" target="_blank" rel="noopener noreferrer" href="#">
-                <img class="maps-link-icon" src="ubi.png" alt="" />
-                <span class="maps-link-text">Abrir en Maps</span>
-              </a>
-            </div>
-
-            <div class="transport-stop">
-              <div class="transport-stop-head">
-                <span class="transport-stop-name">Úbeda</span>
-                <span class="transport-stop-time">XX:XX h</span>
-              </div>
-              <p class="transport-stop-address">Dirección de la parada de Úbeda</p>
-              <a class="maps-link" target="_blank" rel="noopener noreferrer" href="#">
-                <img class="maps-link-icon" src="ubi.png" alt="" />
-                <span class="maps-link-text">Abrir en Maps</span>
-              </a>
-            </div>
-
-            <div class="transport-stop transport-stop-last">
-              <div class="transport-stop-head">
-                <span class="transport-stop-name">Baeza</span>
-                <span class="transport-stop-time">XX:XX h</span>
-              </div>
-              <p class="transport-stop-address">Dirección de la parada de Baeza</p>
-              <a class="maps-link" target="_blank" rel="noopener noreferrer" href="#">
-                <img class="maps-link-icon" src="ubi.png" alt="" />
-                <span class="maps-link-text">Abrir en Maps</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="line transport-line"></div>
-
-          <div class="transport-block">
-            <h3 class="transport-block-title">Bus de vuelta</h3>
-            <p class="transport-note">
-              Ambos turnos de regreso saldrán desde la finca.
-            </p>
-
-            <div class="transport-return-list">
-              <div class="transport-return-item">
-                <span class="transport-return-label">Primer turno</span>
-                <span class="transport-return-time">XX:XX h</span>
-              </div>
-
-              <div class="transport-return-item">
-                <span class="transport-return-label">Segundo turno</span>
-                <span class="transport-return-time">XX:XX h</span>
-              </div>
-            </div>
-          </div>
+        <div class="venue-meta">
+          <span class="meta-text" id="venueTime">19:30h</span>
         </div>
-      </div>
-    </section>
 
-    <!-- =========================================================
-         PREGUNTAS FRECUENTES
-    ========================================================== -->
-    <section class="section paper" id="faq">
-      <div class="container">
-        <h2 class="title font-display">Preguntas frecuentes</h2>
-        <p class="subtitle font-body">Información útil para el gran día</p>
+        <div class="line venue-line"></div>
 
-        <div class="faq-card">
-          <div class="faq-list">
-            <details>
-              <summary>¿Hay parking?</summary>
-              <p>
-                Sí, habrá zona de aparcamiento en la finca (avisadme si tengo que
-                cambiar la respuesta).
-              </p>
-            </details>
-
-            <details>
-              <summary>¿Código de vestimenta?</summary>
-              <p>Lo que me digáis ponemos aquí.</p>
-            </details>
-
-            <details>
-              <summary>¿Puedo llevar acompañante?</summary>
-              <p>Lo que me digáis ponemos aquí.</p>
-            </details>
-
-            <details>
-              <summary>¿Alergias o intolerancias?</summary>
-              <p>
-                Indícalo en el RSVP (sin gluten, lactosa, vegetariano, etc.).
-              </p>
-            </details>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         PREBODA
-    ========================================================== -->
-    <section class="section prewedding-wrap" id="prewedding">
-      <div class="container">
-        <p class="subtitle font-body prewedding-subtitle">Preboda</p>
-        <h2 class="title font-display prewedding-title">Ven a saludar…</h2>
-
-        <p class="subtitle font-body prewedding-text">
-          TEXTO QUE QUERÁIS PONER AQUÍ. DUDA: ¿PONGO SOLO LA UBICACIÓN (CON
-          REDIRECCIÓN A MAPS), O TAMBIÉN QUERÉIS QUE SALGA EL MAPA COMO DE LA
-          FINCA?
+        <p class="addr font-body" id="venueAddress">
+          Cortijo Gil de Olid
+          <br />
+          23440 Puente del Obispo, Jaén
         </p>
 
-        <div class="pre-grid">
-          <article class="pre-item">
-            <img src="assets/pre-1.png" alt="" class="pre-icon" />
-            <h3 class="font-display">Preboda</h3>
-            <p class="meta font-body">Viernes 19 junio 2026</p>
-            <p class="meta font-body">20:30</p>
-            <p class="place font-body">Lugar por confirmar</p>
+        <div class="map-box">
+          <iframe
+            class="map"
+            id="mapFrame"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=37.9425181,-3.5452957&output=embed"
+            title="Mapa de la ubicación de la boda"
+          ></iframe>
+        </div>
 
-            <div class="pre-actions">
-              <a class="btn" href="#" target="_blank" rel="noopener noreferrer">
-                Mapa
-              </a>
-            </div>
-          </article>
+        <div class="venue-actions">
+          <a
+            class="maps-link"
+            id="mapsLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.google.com/maps/place/Vandelvira+La+Finca/@37.9425181,-3.5452957,17z/data=!3m1!4b1!4m6!3m5!1s0xd6e89b2d2d91dab:0xf8d4b6ffa64ac603!8m2!3d37.9425181!4d-3.5452957!16s%2Fg%2F11wft8k1np?entry=ttu&g_ep=EgoyMDI2MDMwNC4xIKXMDSoASAFQAw%3D%3D"
+          >
+            <img class="maps-link-icon" src="ubi.png" alt="" />
+            <span class="maps-link-text">Cómo llegar</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- CARD 2 · PROGRAMA -->
+      <article class="details-card">
+        <h3 class="details-title font-display">Programa del día</h3>
+
+        <img
+          class="timeline-img"
+          src="cronograma-boda.png"
+          alt="Programa vertical del día de la boda"
+          loading="lazy"
+        />
+      </article>
+
+      <!-- CARD 3 · TRANSPORTE -->
+      <!-- CARD 3 · TRANSPORTE -->
+<article class="details-card transport-card-soft">
+  <h3 class="details-title font-display">Transporte</h3>
+
+  <p class="transport-note font-body">
+    Para facilitar los desplazamientos y que podáis disfrutar del día como es debido,
+    habrá servicio de autobús con las siguientes paradas.
+  </p>
+
+  <div class="transport-layout">
+    <!-- IDA -->
+    <section class="transport-block">
+      <div class="transport-block-head">
+        <span class="transport-block-kicker">Autobús de ida</span>
+        <div class="transport-mini-line"></div>
+      </div>
+
+      <p class="transport-label">Paradas</p>
+
+      <div class="transport-stops">
+        <span class="transport-stop-pill">Jódar</span>
+        <span class="transport-stop-pill">Úbeda</span>
+        <span class="transport-stop-pill">Baeza</span>
+      </div>
+
+      <div class="transport-time-box">
+        <span class="transport-time-label">Horario estimado</span>
+        <span class="transport-time-value">18:00h</span>
+      </div>
+
+      <p class="transport-small font-body">
+        Se os confirmará más adelante junto con la ubicación exacta de la parada.
+      </p>
+    </section>
+
+    <!-- VUELTA -->
+    <section class="transport-block transport-block-return">
+      <div class="transport-block-head">
+        <span class="transport-block-kicker">Autobús de vuelta</span>
+        <div class="transport-mini-line"></div>
+      </div>
+
+      <p class="transport-note font-body transport-note-soft">
+        Ambos turnos de regreso contarán con paradas en las tres ubicaciones.
+      </p>
+
+      <div class="transport-return-list">
+        <div class="transport-return-item">
+          <span class="transport-return-label">Primer turno</span>
+          <span class="transport-return-time">02:30h - 03:00h</span>
+        </div>
+
+        <div class="transport-return-item">
+          <span class="transport-return-label">Segundo turno</span>
+          <span class="transport-return-time">Fin de la fiesta</span>
         </div>
       </div>
     </section>
+  </div>
+</article>
+
+      <!-- CARD 4 · PARKING -->
+      <article class="details-card">
+        <h3 class="details-title font-display">Parking</h3>
+
+        <p class="parking-text font-body">
+          Si preferís venir con vehículo propio, la finca dispone de una zona de aparcamiento.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================================
+     PREBODA
+========================================================== -->
+<section class="section prewedding-wrap" id="prewedding">
+  <div class="container">
+    <p class="subtitle font-body prewedding-subtitle">Preboda</p>
+    <h2 class="title font-display prewedding-title">Ven a brindar con nosotros</h2>
+
+    <p class="subtitle font-body prewedding-text">
+      Antes del gran día, nos encantaría compartir con vosotros una tarde-noche
+      relajada para vernos, brindar y empezar a celebrar juntos.
+    </p>
+
+    <div class="pre-card">
+      <div class="pre-card-top">
+        <img src="assets/pre-1.png" alt="" class="pre-icon" />
+        <div class="pre-intro">
+          <span class="pre-kicker">Nos vemos el día antes</span>
+          <h3 class="font-display pre-name">Preboda</h3>
+          <p class="pre-description font-body">
+            Un encuentro informal para empezar el fin de semana de la mejor manera:
+            con tiempo para saludarnos, compartir unas copas y disfrutar juntos antes
+            de la boda.
+          </p>
+        </div>
+      </div>
+
+      <div class="pre-details">
+        <div class="pre-detail">
+          <span class="pre-detail-label">Fecha</span>
+          <span class="pre-detail-value">Viernes 19 de junio de 2026</span>
+        </div>
+
+        <div class="pre-detail">
+          <span class="pre-detail-label">Hora</span>
+          <span class="pre-detail-value">20:30 h</span>
+        </div>
+
+        <div class="pre-detail">
+          <span class="pre-detail-label">Lugar</span>
+          <span class="pre-detail-value">Ubicación por confirmar</span>
+        </div>
+
+        <div class="pre-detail">
+          <span class="pre-detail-label">Plan</span>
+          <span class="pre-detail-value">Picoteo, copas y muchas ganas de celebrar</span>
+        </div>
+      </div>
+
+      <p class="pre-note font-body">
+        En cuanto tengamos cerrada la ubicación exacta, os compartiremos todos los
+        detalles para que podáis llegar sin problema.
+      </p>
+
+      <div class="pre-actions">
+        <a
+          class="maps-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="#"
+        >
+          <img class="maps-link-icon" src="ubi.png" alt="" />
+          <span class="maps-link-text">Cómo llegar</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- =========================================================
      RSVP / FORMULARIO DE CONFIRMACIÓN
@@ -408,13 +425,13 @@
 
   <div class="radios">
   <label class="radio">
-    <input type="radio" name="attend" value="Sí, asistiré" checked />
+    <input type="radio" name="preweddingAttend" value="Sí, asistiré" checked />
     <span class="dot-radio" aria-hidden="true"></span>
     <span id="attendYesText">Sí, asistiré</span>
   </label>
 
   <label class="radio">
-    <input type="radio" name="attend" value="No podré asistir" />
+    <input type="radio" name="preweddingAttend" value="No podré asistir" />
     <span class="dot-radio" aria-hidden="true"></span>
     <span id="attendNoText">No, no podré asistir</span>
   </label>

@@ -58,17 +58,7 @@ function updateCountdown() {
 updateCountdown();
 const countdownTimer = setInterval(updateCountdown, 1000);
 
-/* =========================================================
-   SCROLL DESDE EL HERO HASTA EL RSVP
-========================================================= */
-const heroScroll = document.getElementById("heroScroll");
 
-heroScroll.addEventListener("click", () => {
-  document.getElementById("rsvp").scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
-});
 
 /* =========================================================
    BOTÓN FLOTANTE PARA VOLVER ARRIBA
@@ -122,7 +112,7 @@ const defaultSubmitHTML = submitBtn.innerHTML;
 
 let guestCount = 1;
 const MIN_GUESTS = 1;
-const MAX_GUESTS = 4;
+const MAX_GUESTS = 5;
 
 /* ---------- Lectura de valores ---------- */
 function getSelectedAttend() {
