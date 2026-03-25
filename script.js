@@ -4,8 +4,7 @@
 ========================================================= */
 const EVENT_ISO = "2026-06-20T19:30:00";
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwSkBYqs5MYzYlQS5ErBKhuhjJnsn296g1MFv3AcsU5jvy-21mjfEWXgC4qjWv3o_14hQ/exec";
-
+  "https://script.google.com/macros/s/AKfycbwSkBYqs5MYzYlQS5ErBKhuhjJnsn296g1MFv3AcsU5jvy-21mjfEWXgC4qjWv3o_14hQ/exec"
 /* =========================================================
    HELPERS
 ========================================================= */
@@ -176,7 +175,7 @@ function updateAttendLabels() {
 /* ---------- Reset preboda a "No" ---------- */
 function resetPreweddingToNo() {
   const defaultPreweddingNo = form.querySelector(
-    'input[name="preweddingAttend"][value="No asistiré"]'
+    'input[name="preweddingAttend"][value="No podré asistir"]'
   );
 
   if (defaultPreweddingNo) {

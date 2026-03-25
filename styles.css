@@ -202,8 +202,8 @@ body {
 .hero .overlay {
   position: absolute;
   inset: 0;
- /* background: rgba(0, 0, 0, 0.32); */
- background: rgba(0, 0, 0, 0.09);
+  background: rgba(0, 0, 0, 0.40); 
+/* background: rgba(0, 0, 0, 0.09); */
 }
 
 .hero .content {
@@ -217,7 +217,8 @@ body {
 }
 
 .hero-top {
-  padding-top: clamp(48px, 8vh, 78px);
+ /* padding-top: clamp(48px, 8vh, 78px); */
+ padding-top: clamp(60px, 8vh, 78px);
   text-align: center;
   color: var(--white);
 }
@@ -245,6 +246,7 @@ body {
   gap: 18px;
   margin: 0;
   text-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  margin-top: 220px;
 }
 
 .hero-names .name {
@@ -387,7 +389,7 @@ body {
 
 /* DETALLES DEL DÍA */
 .venue-wrap {
-  background: var(--gold);
+  background: #93a996;
   color: var(--ivory);
 }
 
@@ -899,7 +901,7 @@ body {
 
 /* RSVP */
 .rsvp-wrap {
-  background: var(--gold);
+  background: #93a996;
 }
 
 .rsvp-wrap .title {
@@ -957,7 +959,7 @@ body {
 
 .rsvp-card .guest-card-subtitle {
   margin: 3px 0 0;
-  color: rgba(131, 93, 47, 0.72);
+  color: #93a996;
   font-size: 13px;
   font-weight: 400;
   line-height: 1.45;
@@ -970,7 +972,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 7px;
-  color: var(--brown);
+  color: #93a996;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.35;
