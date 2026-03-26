@@ -730,6 +730,44 @@ img {
     }
 }
 
+@media (max-width: 480px) {
+    .transport-stops {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 18px;
+    }
+
+    .transport-stop-pill {
+        min-width: 0;
+        padding: 8px 10px;
+        font-size: 14px;
+        white-space: nowrap;
+        flex: 1 1 0;
+        max-width: 96px;
+    }
+
+    .transport-return-item {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 8px;
+        padding: 16px 14px;
+    }
+
+    .transport-return-label {
+        font-size: 14px;
+        line-height: 1.3;
+    }
+
+    .transport-return-time {
+        font-size: 17px;
+        line-height: 1.15;
+    }
+}
+
 /* PREBODA */
 .prewedding-wrap {
     background: var(--bg-beige);
