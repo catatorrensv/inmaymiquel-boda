@@ -4,12 +4,12 @@
 ========================================================= */
 const EVENT_ISO = "2026-06-20T19:30:00";
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwSkBYqs5MYzYlQS5ErBKhuhjJnsn296g1MFv3AcsU5jvy-21mjfEWXgC4qjWv3o_14hQ/exec"
+  "https://script.google.com/macros/s/AKfycbw6cK0wZ8SlWsGKWX1Onc8bYNka_fsh-ewIZqZaxk53_VtH7VAMhER2D6xDlz69nZfOxg/exec"
 /* =========================================================
    HELPERS
 ========================================================= */
 function pad2(value) {
-  return String(value).padStart(2, "0");
+    return String(value).padStart(2, "0");
 }
 
 /* =========================================================
@@ -24,40 +24,38 @@ const secsEl = document.getElementById("cdSecs");
 const countdownTarget = new Date(EVENT_ISO).getTime();
 
 function updateCountdown() {
-  const now = Date.now();
-  let diff = countdownTarget - now;
+    const now = Date.now();
+    let diff = countdownTarget - now;
 
-  if (diff <= 0) {
-    countdownTitle.textContent = "¡Ya ha llegado el gran día!";
-    daysEl.textContent = "00";
-    hoursEl.textContent = "00";
-    minsEl.textContent = "00";
-    secsEl.textContent = "00";
-    clearInterval(countdownTimer);
-    return;
-  }
+    if (diff <= 0) {
+        countdownTitle.textContent = "¡Ya ha llegado el gran día!";
+        daysEl.textContent = "00";
+        hoursEl.textContent = "00";
+        minsEl.textContent = "00";
+        secsEl.textContent = "00";
+        clearInterval(countdownTimer);
+        return;
+    }
 
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  diff -= days * (1000 * 60 * 60 * 24);
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    diff -= days * (1000 * 60 * 60 * 24);
 
-  const hours = Math.floor(diff / (1000 * 60 * 60));
-  diff -= hours * (1000 * 60 * 60);
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    diff -= hours * (1000 * 60 * 60);
 
-  const mins = Math.floor(diff / (1000 * 60));
-  diff -= mins * (1000 * 60);
+    const mins = Math.floor(diff / (1000 * 60));
+    diff -= mins * (1000 * 60);
 
-  const secs = Math.floor(diff / 1000);
+    const secs = Math.floor(diff / 1000);
 
-  daysEl.textContent = pad2(days);
-  hoursEl.textContent = pad2(hours);
-  minsEl.textContent = pad2(mins);
-  secsEl.textContent = pad2(secs);
+    daysEl.textContent = pad2(days);
+    hoursEl.textContent = pad2(hours);
+    minsEl.textContent = pad2(mins);
+    secsEl.textContent = pad2(secs);
 }
 
 updateCountdown();
 const countdownTimer = setInterval(updateCountdown, 1000);
-
-
 
 /* =========================================================
    BOTÓN FLOTANTE PARA VOLVER ARRIBA
@@ -65,13 +63,13 @@ const countdownTimer = setInterval(updateCountdown, 1000);
 const fab = document.getElementById("fab");
 
 window.addEventListener("scroll", () => {
-  fab.classList.toggle("show", window.scrollY > 600);
+    fab.classList.toggle("show", window.scrollY > 600);
 });
 
 fab.addEventListener("click", () => {
-  document.getElementById("top").scrollIntoView({
-    behavior: "smooth"
-  });
+    document.getElementById("top").scrollIntoView({
+        behavior: "smooth",
+    });
 });
 
 /* =========================================================
@@ -115,102 +113,87 @@ const MAX_GUESTS = 5;
 
 /* ---------- Lectura de valores ---------- */
 function getSelectedAttend() {
-  const checked = form.querySelector('input[name="attend"]:checked');
-  return checked ? checked.value : "";
+    const checked = form.querySelector('input[name="attend"]:checked');
+    return checked ? checked.value : "";
 }
 
 function isAttending() {
-  return getSelectedAttend() === "Sí, asistiré";
+    return getSelectedAttend() === "Sí, asistiré";
 }
 
 function getSelectedPreweddingAttend() {
-  const checked = form.querySelector('input[name="preweddingAttend"]:checked');
-  return checked ? checked.value : "";
+    const checked = form.querySelector('input[name="preweddingAttend"]:checked');
+    return checked ? checked.value : "";
 }
 
 function getSelectedBusStop() {
-  const checked = form.querySelector('input[name="busStop"]:checked');
-  return checked ? checked.value : "";
+    const checked = form.querySelector('input[name="busStop"]:checked');
+    return checked ? checked.value : "";
 }
 
 /* Etiquetas en plural de bus */
 function updateBusLabels() {
-  if (busLabel) {
-    busLabel.textContent =
-      guestCount > 1
-        ? "¿Necesitáis autobús?"
-        : "¿Necesitas autobús?";
-  }
+    if (busLabel) {
+        busLabel.textContent = guestCount > 1 ? "¿Necesitáis autobús?" : "¿Necesitas autobús?";
+    }
 
-  if (busStopLabel) {
-    busStopLabel.textContent =
-      guestCount > 1
-        ? "¿En qué parada cogeréis el bus?"
-        : "¿En qué parada cogerás el bus?";
-  }
+    if (busStopLabel) {
+        busStopLabel.textContent =
+            guestCount > 1 ? "¿En qué parada cogeréis el bus?" : "¿En qué parada cogerás el bus?";
+    }
 }
 
 /* ---------- Texto dinámico preboda ---------- */
 function updatePreweddingLabel() {
-  if (!preweddingLabel) return;
+    if (!preweddingLabel) return;
 
-  preweddingLabel.textContent =
-    guestCount > 1
-      ? "¿Asistiréis también a la preboda?"
-      : "¿Asistirás también a la preboda?";
+    preweddingLabel.textContent =
+        guestCount > 1 ? "¿Asistiréis también a la preboda?" : "¿Asistirás también a la preboda?";
 }
 
 function updateAttendLabels() {
-  if (!attendYesText || !attendNoText) return;
+    if (!attendYesText || !attendNoText) return;
 
-  if (guestCount > 1) {
-    attendYesText.textContent = "Sí, asistiremos";
-    attendNoText.textContent = "No, no podremos asistir";
-  } else {
-    attendYesText.textContent = "Sí, asistiré";
-    attendNoText.textContent = "No, no podré asistir";
-  }
+    if (guestCount > 1) {
+        attendYesText.textContent = "Sí, asistiremos";
+        attendNoText.textContent = "No, no podremos asistir";
+    } else {
+        attendYesText.textContent = "Sí, asistiré";
+        attendNoText.textContent = "No, no podré asistir";
+    }
 }
 
 /* ---------- Reset preboda a "No" ---------- */
 function resetPreweddingToNo() {
-  const defaultPreweddingNo = form.querySelector(
-    'input[name="preweddingAttend"][value="No podré asistir"]'
-  );
+    const defaultPreweddingNo = form.querySelector('input[name="preweddingAttend"][value="No podré asistir"]');
 
-  if (defaultPreweddingNo) {
-    defaultPreweddingNo.checked = true;
-  }
+    if (defaultPreweddingNo) {
+        defaultPreweddingNo.checked = true;
+    }
 }
 
 /* ---------- Render de tarjetas de invitados ---------- */
 function renderGuestCards() {
-  guestCards.innerHTML = "";
+    guestCards.innerHTML = "";
 
-  const attending = isAttending();
-  const totalCards = attending ? guestCount : 1;
+    const attending = isAttending();
+    const totalCards = attending ? guestCount : 1;
 
-  for (let i = 1; i <= totalCards; i++) {
-    const isMain = i === 1;
+    for (let i = 1; i <= totalCards; i++) {
+        const isMain = i === 1;
 
-    const card = document.createElement("div");
-    card.className = "guest-card";
+        const card = document.createElement("div");
+        card.className = "guest-card";
 
-    card.innerHTML = `
+        card.innerHTML = `
       <div class="guest-card-head">
         <h3 class="guest-card-title">
-          ${
-            attending
-              ? isMain
-                ? "Contacto principal"
-                : `Invitado ${i}`
-              : "Tus datos"
-          }
+          ${attending ? (isMain ? "Contacto principal" : `Invitado ${i}`) : "Tus datos"}
         </h3>
         ${
-          attending && isMain
-            ? `<p class="guest-card-subtitle">Usaremos este nombre como referencia principal de la confirmación</p>`
-            : ""
+            attending && isMain
+                ? `<p class="guest-card-subtitle">Usaremos este nombre como referencia principal de la confirmación</p>`
+                : ""
         }
       </div>
 
@@ -227,8 +210,8 @@ function renderGuestCards() {
         </label>
 
         ${
-          attending
-            ? `
+            attending
+                ? `
             <label for="guest_diet_${i}">
               Alergias / intolerancias / dietas específicas
               <input
@@ -239,163 +222,163 @@ function renderGuestCards() {
               />
             </label>
           `
-            : ""
+                : ""
         }
       </div>
     `;
 
-    guestCards.appendChild(card);
-  }
+        guestCards.appendChild(card);
+    }
 }
 
 /* ---------- Actualizar contador de invitados ---------- */
 function updateGuestCount(newCount) {
-  guestCount = Math.max(MIN_GUESTS, Math.min(MAX_GUESTS, newCount));
-  guestCountEl.textContent = guestCount;
-  guestsInput.value = String(guestCount);
+    guestCount = Math.max(MIN_GUESTS, Math.min(MAX_GUESTS, newCount));
+    guestCountEl.textContent = guestCount;
+    guestsInput.value = String(guestCount);
 
-  updateAttendLabels();
-  updatePreweddingLabel();
-  updateBusLabels();
-  renderGuestCards();
+    updateAttendLabels();
+    updatePreweddingLabel();
+    updateBusLabels();
+    renderGuestCards();
 }
 
 /* ---------- Mostrar / ocultar parada de bus ---------- */
 function toggleBusStop() {
-  const showBusStop = isAttending() && busSelect.value === "Sí";
+    const showBusStop = isAttending() && busSelect.value === "Sí";
 
-  busStopGroup.hidden = !showBusStop;
+    busStopGroup.hidden = !showBusStop;
 
-  busStopInputs.forEach((input) => {
-    input.disabled = !showBusStop;
+    busStopInputs.forEach((input) => {
+        input.disabled = !showBusStop;
 
-    if (!showBusStop) {
-      input.checked = false;
-    }
-  });
+        if (!showBusStop) {
+            input.checked = false;
+        }
+    });
 }
 
 /* ---------- Activar / desactivar bloques según asistencia ---------- */
 function toggleAttendanceFields() {
-  const attending = isAttending();
+    const attending = isAttending();
 
-  guestsGroup.classList.toggle("is-hidden", !attending);
-  preweddingFields.classList.toggle("is-hidden", !attending);
-  busFields.classList.toggle("is-hidden", !attending);
-  songField.classList.toggle("is-hidden", !attending);
+    guestsGroup.classList.toggle("is-hidden", !attending);
+    preweddingFields.classList.toggle("is-hidden", !attending);
+    busFields.classList.toggle("is-hidden", !attending);
+    songField.classList.toggle("is-hidden", !attending);
 
-  if (!attending) {
-    busSelect.value = "No";
-    busSelect.disabled = true;
+    if (!attending) {
+        busSelect.value = "No";
+        busSelect.disabled = true;
 
-    busStopInputs.forEach((input) => {
-      input.checked = false;
-      input.disabled = true;
-    });
+        busStopInputs.forEach((input) => {
+            input.checked = false;
+            input.disabled = true;
+        });
 
-    songInput.value = "";
-    songInput.disabled = true;
+        songInput.value = "";
+        songInput.disabled = true;
 
-    resetPreweddingToNo();
-    preweddingInputs.forEach((input) => {
-      input.disabled = true;
-    });
-  } else {
-    busSelect.disabled = false;
-    songInput.disabled = false;
+        resetPreweddingToNo();
+        preweddingInputs.forEach((input) => {
+            input.disabled = true;
+        });
+    } else {
+        busSelect.disabled = false;
+        songInput.disabled = false;
 
-    preweddingInputs.forEach((input) => {
-      input.disabled = false;
-    });
-  }
+        preweddingInputs.forEach((input) => {
+            input.disabled = false;
+        });
+    }
 
-  updatePreweddingLabel();
-  renderGuestCards();
-  toggleBusStop();
+    updatePreweddingLabel();
+    renderGuestCards();
+    toggleBusStop();
 }
 
 /* ---------- Recoger datos de invitados ---------- */
 function getGuestsData() {
-  const guestsData = [];
-  const totalGuests = isAttending() ? guestCount : 1;
+    const guestsData = [];
+    const totalGuests = isAttending() ? guestCount : 1;
 
-  for (let i = 1; i <= totalGuests; i++) {
-    const name = document.getElementById(`guest_name_${i}`)?.value.trim() || "";
-    const diet = document.getElementById(`guest_diet_${i}`)?.value.trim() || "";
+    for (let i = 1; i <= totalGuests; i++) {
+        const name = document.getElementById(`guest_name_${i}`)?.value.trim() || "";
+        const diet = document.getElementById(`guest_diet_${i}`)?.value.trim() || "";
 
-    guestsData.push({
-      guestNumber: i,
-      type: i === 1 ? "Contacto principal" : "Invitado",
-      fullName: name,
-      diet
-    });
-  }
+        guestsData.push({
+            guestNumber: i,
+            type: i === 1 ? "Contacto principal" : "Invitado",
+            fullName: name,
+            diet,
+        });
+    }
 
-  return guestsData;
+    return guestsData;
 }
 
 /* ---------- Recoger datos del formulario ---------- */
 function getFormData() {
-  const guestsData = getGuestsData();
+    const guestsData = getGuestsData();
 
-  return {
-    attend: getSelectedAttend(),
-    guests: isAttending() ? guestsInput.value : "1",
-    guestsData,
-    fullName: guestsData[0]?.fullName || "",
-    diet: guestsData[0]?.diet || "",
-    preweddingAttend: isAttending() ? getSelectedPreweddingAttend() : "No asistiré",
-    bus: isAttending() ? busSelect.value : "No",
-    busStop: isAttending() && busSelect.value === "Sí" ? getSelectedBusStop() : "",
-    song: isAttending() ? songInput.value.trim() : "",
-    message: messageInput.value.trim()
-  };
+    return {
+        attend: getSelectedAttend(),
+        guests: isAttending() ? guestsInput.value : "1",
+        guestsData,
+        fullName: guestsData[0]?.fullName || "",
+        diet: guestsData[0]?.diet || "",
+        preweddingAttend: isAttending() ? getSelectedPreweddingAttend() : "No asistiré",
+        bus: isAttending() ? busSelect.value : "No",
+        busStop: isAttending() && busSelect.value === "Sí" ? getSelectedBusStop() : "",
+        song: isAttending() ? songInput.value.trim() : "",
+        message: messageInput.value.trim(),
+    };
 }
 
 /* ---------- Validaciones ---------- */
 function validateForm(data) {
-  if (!data.fullName) {
-    return "Por favor, indica tu nombre y apellidos.";
-  }
-
-  for (let i = 0; i < data.guestsData.length; i++) {
-    if (!data.guestsData[i].fullName) {
-      return `Por favor, completa el nombre del ${i === 0 ? "contacto principal" : `invitado ${i + 1}`}.`;
+    if (!data.fullName) {
+        return "Por favor, indica tu nombre y apellidos.";
     }
-  }
 
-  if (data.attend === "Sí, asistiré" && data.bus === "Sí" && !data.busStop) {
-    return "Por favor, indica en qué parada cogerás el autobús.";
-  }
+    for (let i = 0; i < data.guestsData.length; i++) {
+        if (!data.guestsData[i].fullName) {
+            return `Por favor, completa el nombre del ${i === 0 ? "contacto principal" : `invitado ${i + 1}`}.`;
+        }
+    }
 
-  return "";
+    if (data.attend === "Sí, asistiré" && data.bus === "Sí" && !data.busStop) {
+        return "Por favor, indica en qué parada cogerás el autobús.";
+    }
+
+    return "";
 }
 
 /* ---------- Mensajes al usuario ---------- */
 function showResult(message, isError = false) {
-  result.style.display = "block";
-  result.textContent = message;
-  result.classList.toggle("is-error", isError);
+    result.style.display = "block";
+    result.textContent = message;
+    result.classList.toggle("is-error", isError);
 
-  result.scrollIntoView({
-    behavior: "smooth",
-    block: "nearest"
-  });
+    result.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+    });
 }
 
 /* ---------- Eventos de interfaz ---------- */
 attendInputs.forEach((input) => {
-  input.addEventListener("change", toggleAttendanceFields);
+    input.addEventListener("change", toggleAttendanceFields);
 });
 
 busSelect.addEventListener("change", toggleBusStop);
 
 guestMinus.addEventListener("click", () => {
-  updateGuestCount(guestCount - 1);
+    updateGuestCount(guestCount - 1);
 });
 
 guestPlus.addEventListener("click", () => {
-  updateGuestCount(guestCount + 1);
+    updateGuestCount(guestCount + 1);
 });
 
 /* Estado inicial */
@@ -404,63 +387,61 @@ toggleAttendanceFields();
 
 /* ---------- Envío del formulario ---------- */
 form.addEventListener("submit", async (event) => {
-  event.preventDefault();
+    event.preventDefault();
 
-  const data = getFormData();
-  const error = validateForm(data);
+    const data = getFormData();
+    const error = validateForm(data);
 
-  if (error) {
-    showResult(error, true);
-    return;
-  }
+    if (error) {
+        showResult(error, true);
+        return;
+    }
 
-  submitBtn.disabled = true;
-  submitBtn.textContent = "Enviando...";
-
-  try {
-    const response = await fetch(SCRIPT_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8"
-      },
-      body: JSON.stringify(data)
-    });
-
-    const text = await response.text();
-    let json;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Enviando...";
 
     try {
-      json = JSON.parse(text);
-    } catch {
-      throw new Error(`Respuesta no válida del servidor: ${text.slice(0, 200)}`);
+        const response = await fetch(SCRIPT_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8",
+            },
+            body: JSON.stringify(data),
+        });
+
+        const text = await response.text();
+        let json;
+
+        try {
+            json = JSON.parse(text);
+        } catch {
+            throw new Error(`Respuesta no válida del servidor: ${text.slice(0, 200)}`);
+        }
+
+        if (!json.ok) {
+            throw new Error(json.message || "No se pudo guardar el RSVP.");
+        }
+
+        showResult(json.message || "¡Gracias! Tu confirmación se ha enviado correctamente.");
+
+        form.reset();
+
+        const defaultAttend = form.querySelector('input[name="attend"][value="Sí, asistiré"]');
+
+        if (defaultAttend) {
+            defaultAttend.checked = true;
+        }
+
+        resetPreweddingToNo();
+        busSelect.value = "No";
+
+        updateGuestCount(1);
+        toggleAttendanceFields();
+    } catch (error) {
+        console.error(error);
+        showResult(`Error: ${error.message}`, true);
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = defaultSubmitHTML;
     }
-
-    if (!json.ok) {
-      throw new Error(json.message || "No se pudo guardar el RSVP.");
-    }
-
-    showResult(json.message || "¡Gracias! Tu confirmación se ha enviado correctamente.");
-
-    form.reset();
-
-    const defaultAttend = form.querySelector(
-      'input[name="attend"][value="Sí, asistiré"]'
-    );
-
-    if (defaultAttend) {
-      defaultAttend.checked = true;
-    }
-
-    resetPreweddingToNo();
-    busSelect.value = "No";
-
-    updateGuestCount(1);
-    toggleAttendanceFields();
-  } catch (error) {
-    console.error(error);
-    showResult(`Error: ${error.message}`, true);
-  } finally {
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = defaultSubmitHTML;
-  }
 });
