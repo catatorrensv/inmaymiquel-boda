@@ -4,7 +4,8 @@
 ========================================================= */
 const EVENT_ISO = "2026-06-20T19:30:00";
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbw6cK0wZ8SlWsGKWX1Onc8bYNka_fsh-ewIZqZaxk53_VtH7VAMhER2D6xDlz69nZfOxg/exec"
+  "https://script.google.com/macros/s/AKfycbyRjz6cmsD8PJXFlsrUaab6DjeqQa_EOYoDxFJLlF0MMS0Dgea7N1Fx4cIyWuSNic4wWg/exec"
+
 /* =========================================================
    HELPERS
 ========================================================= */
@@ -94,6 +95,8 @@ const preweddingInputs = form.querySelectorAll('input[name="preweddingAttend"]')
 const attendYesText = document.getElementById("attendYesText");
 const attendNoText = document.getElementById("attendNoText");
 
+const hasPreweddingForm = !!preweddingFields;
+
 const busFields = document.getElementById("busFields");
 const busSelect = document.getElementById("busSelect");
 const busStopGroup = document.getElementById("busStopGroup");
@@ -122,8 +125,9 @@ function isAttending() {
 }
 
 function getSelectedPreweddingAttend() {
+    if (!hasPreweddingForm) return "No";
     const checked = form.querySelector('input[name="preweddingAttend"]:checked');
-    return checked ? checked.value : "";
+    return checked ? checked.value : "No";
 }
 
 function getSelectedBusStop() {
@@ -152,7 +156,7 @@ function updatePreweddingLabel() {
 }
 
 function updateAttendLabels() {
-    if (!attendYesText || !attendNoText) return;
+    if (!hasPreweddingForm || !attendYesText || !attendNoText) return;
 
     if (guestCount > 1) {
         attendYesText.textContent = "Sí, asistiremos";
@@ -165,6 +169,8 @@ function updateAttendLabels() {
 
 /* ---------- Reset preboda a "No" ---------- */
 function resetPreweddingToNo() {
+    if (!hasPreweddingForm) return;
+
     const defaultPreweddingNo = form.querySelector('input[name="preweddingAttend"][value="No podré asistir"]');
 
     if (defaultPreweddingNo) {
@@ -263,9 +269,12 @@ function toggleAttendanceFields() {
     const attending = isAttending();
 
     guestsGroup.classList.toggle("is-hidden", !attending);
-    preweddingFields.classList.toggle("is-hidden", !attending);
     busFields.classList.toggle("is-hidden", !attending);
     songField.classList.toggle("is-hidden", !attending);
+
+    if (hasPreweddingForm && preweddingFields) {
+        preweddingFields.classList.toggle("is-hidden", !attending);
+    }
 
     if (!attending) {
         busSelect.value = "No";
@@ -279,24 +288,27 @@ function toggleAttendanceFields() {
         songInput.value = "";
         songInput.disabled = true;
 
-        resetPreweddingToNo();
-        preweddingInputs.forEach((input) => {
-            input.disabled = true;
-        });
+        if (hasPreweddingForm) {
+            resetPreweddingToNo();
+            preweddingInputs.forEach((input) => {
+                input.disabled = true;
+            });
+        }
     } else {
         busSelect.disabled = false;
         songInput.disabled = false;
 
-        preweddingInputs.forEach((input) => {
-            input.disabled = false;
-        });
+        if (hasPreweddingForm) {
+            preweddingInputs.forEach((input) => {
+                input.disabled = false;
+            });
+        }
     }
 
     updatePreweddingLabel();
     renderGuestCards();
     toggleBusStop();
 }
-
 /* ---------- Recoger datos de invitados ---------- */
 function getGuestsData() {
     const guestsData = [];
@@ -327,7 +339,9 @@ function getFormData() {
         guestsData,
         fullName: guestsData[0]?.fullName || "",
         diet: guestsData[0]?.diet || "",
-        preweddingAttend: isAttending() ? getSelectedPreweddingAttend() : "No asistiré",
+        preweddingAttend: isAttending()
+            ? (hasPreweddingForm ? getSelectedPreweddingAttend() : "No")
+            : "No",
         bus: isAttending() ? busSelect.value : "No",
         busStop: isAttending() && busSelect.value === "Sí" ? getSelectedBusStop() : "",
         song: isAttending() ? songInput.value.trim() : "",
@@ -419,7 +433,7 @@ form.addEventListener("submit", async (event) => {
         }
 
         if (!json.ok) {
-            throw new Error(json.message || "No se pudo guardar el RSVP.");
+            throw new Error(json.message || "No se pudo guardar la confirmación.");
         }
 
         showResult(json.message || "¡Gracias! Tu confirmación se ha enviado correctamente.");
